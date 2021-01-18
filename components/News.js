@@ -29,11 +29,15 @@ export default function News({news}) {
                                         <li><a href="#">2 Comments</a></li>
                                     </ul>
                                     <h3 className="blog-one__title">
-                                        <Link href="/[blog-details]"  >
+                                        <Link href={`/[blog_slug]`}
+                                        as={`/${item.id}`} 
+                                          >
                                         <a>{item.title}</a>
                                         </Link>
                                     </h3>
-                                    <Link href="/news-details">
+                                    <Link href={`/[blog_slug]`}
+                                        as={`/${item.id}`} 
+                                        >
                                     <a className="blog-one__link">Read More</a>
                                     </Link>
                                 </div>
