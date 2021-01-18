@@ -10,7 +10,7 @@ import { API_URL } from "../components/config";
 
 export async function getStaticPaths(ctx){
     
-    const response = await axios.get(`http://localhost:1337/blogs`)
+    const response = await axios.get(`${API_URL}/blogs`)
     const data = await response.data
     console.log()
     return {
@@ -25,8 +25,8 @@ export async function getStaticPaths(ctx){
 
 export async function  getStaticProps(props){
 
-    const response = await axios.get(`http://localhost:1337/blogs/1`)
-    const pageDataResponse = await axios.get(`http://localhost:1337/blogs`)
+    const response = await axios.get(`${API_URL}/blogs/1`)
+    const pageDataResponse = await axios.get(`${API_URL}/blogs`)
     const data = await response.data
     const pageData = await pageDataResponse.data
 
